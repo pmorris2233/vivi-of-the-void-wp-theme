@@ -21,3 +21,15 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.votv-boxed-content {
+	margin: 0 auto;
+	max-width: $max-size__boxed-content;
+	padding: 0 $size__content-padding;
+}
+
+.page {
+	.widget-area {
+		padding: 0 $size__content-padding;
+	}
+}

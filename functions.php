@@ -176,3 +176,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function vivi_of_the_void_post_class( $classes ) {
+	$classes[] = 'votv-boxed-content';
+	return $classes;
+}
+
+add_filter( 'post_class', 'vivi_of_the_void_post_class', 1, 10 );
