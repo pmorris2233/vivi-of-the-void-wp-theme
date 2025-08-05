@@ -1,3 +1,11 @@
 .site-footer {
 	padding: 0 $size__content-padding;
 }
+
+.entry-footer {
+	padding-top: 1em;
+
+	.cat-links + .edit-link {
+		margin-left: 0.5em;
+	}
+}

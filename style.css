@@ -632,13 +632,50 @@ textarea {
 /* Header
 --------------------------------------------- */
 .site-header {
-	padding: 0 60px;
+	padding: 1em 60px 0;
+}
+
+.site-header h1 {
+	margin-top: 0;
+}
+
+.site-header::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	min-height: 43vw;
+	width: 100%;
+	background-image: url("/wp-content/themes/vivi-of-the-void/assets/img/header-bg.jpg");
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.site-header::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	min-height: 43vw;
+	background: linear-gradient(180deg, rgba(155, 42, 42, 0) 0%, black 100%);
 }
 
 /* Footer
 --------------------------------------------- */
 .site-footer {
 	padding: 0 60px;
+}
+
+.entry-footer {
+	padding-top: 1em;
+}
+
+.entry-footer .cat-links + .edit-link {
+	margin-left: 0.5em;
 }
 
 /* Navigation
@@ -690,7 +727,8 @@ textarea {
 
 .main-navigation a {
 	display: block;
-	text-decoration: none;
+	text-decoration: underline;
+	font-weight: bold;
 }
 
 /* Small menu. */
@@ -766,6 +804,10 @@ textarea {
 }
 
 .page .widget-area {
+	padding: 0 60px;
+}
+
+.single-post .widget-area {
 	padding: 0 60px;
 }
 
