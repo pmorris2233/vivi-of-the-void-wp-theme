@@ -16,14 +16,30 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
+		<div class="blog-about">
+			<div class="blog-about__blurb">
+				<h2 class="blog-about__title">About</h2>
+				<p>
+					<strong>Vivi Estaris</strong> (she/they) is a New Orleans-based writer with a proclivity for Making It Weird. She graduated from Louisiana State University, where she earned her bachelor of fine arts in Creative Writing and the John Ed Bradley Award for Best Fiction. They prefer writing tales of horror, science fiction, fantasy, and speculative fiction, with themes of ethnic identity, queerness, and anti-capitalist sentiment. Vivi is also a horror movie enthusiast, has too many unplayed games sitting in their Steam library, and is chock full of worms. Their work has been featured in <a href="https://ashtonspot.com/product/tales-of-horror-magazine-issue-04-june-2025/" target="_blank"><em>Tales of Horror</em></a> and will soon be appearing on <a href="https://talestoterrify.com/" target="_blank"><em>Tales to Terrify</em></a>.
+				</p>
+			</div>
+			<img class="blog-about__image" src="<?= wp_get_attachment_url( 17 ) ?>" alt="Vivi of the Void">
+		</div>
+		
+		<hr>
 
 		<?php
 		if ( have_posts() ) :
+			?>
 
-			if ( is_home() && ! is_front_page() ) :
+			<div class="blog-posts">
+
+			<?php
+
+			if ( is_home() ) :
 				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				<header class="blog-header">
+					<h2 class="page-title"><?= __( 'Stories', 'vivi-of-the-void' ) ?></h2>
 				</header>
 				<?php
 			endif;
@@ -40,6 +56,11 @@ get_header();
 				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
+			?>
+
+			</div>
+
+			<?php
 
 			the_posts_navigation();
 
@@ -53,5 +74,5 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();

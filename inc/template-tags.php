@@ -63,7 +63,7 @@ if ( ! function_exists( 'vivi_of_the_void_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'vivi-of-the-void' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'vivi-of-the-void' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				// printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'vivi-of-the-void' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			/* translators: used between list items, there is a space after the comma */

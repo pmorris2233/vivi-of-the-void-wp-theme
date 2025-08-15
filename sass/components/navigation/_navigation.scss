@@ -1,6 +1,10 @@
 .main-navigation {
 	display: block;
-	width: 100%;
+	width: auto;
+
+	.page_item {
+		font-size: 1.625rem;
+	}
 
 	ul {
 		display: none;
@@ -92,7 +96,7 @@
 .post-navigation {
 
 	.site-main & {
-		margin: 0 0 1.5em;
+		margin: 0 $size__content-padding 1.5em;
 	}
 
 	.nav-links {

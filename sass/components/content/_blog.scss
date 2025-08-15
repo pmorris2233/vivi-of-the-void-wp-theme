@@ -1,5 +1,55 @@
 .blog {
+
 	.widget-area {
 		padding: 0 $size__content-padding;
+	}
+
+	.blog-header {
+		padding: 0 $size__content-padding;
+		max-width: $max-size__boxed-content;
+		margin: 0 auto;
+	}
+
+	.blog-about {
+		padding: 0 $size__content-padding 2em;
+		max-width: $max-size__boxed-content;
+		margin: 4em auto 0;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+
+		&__blurb {
+			font-size: 1.3rem;
+			line-height: 1.8;
+			letter-spacing: 0.025em;
+		}
+
+		&__title {
+			font-size: 2.8125rem;
+			margin: 0 0 0.5em;
+		}
+
+		&__image {
+			max-width: calc( #{$max-size__boxed-content} / 3 );
+			margin: 58px 0 0 60px;
+		}
+	}
+
+	.blog-posts {
+		margin-bottom: 6em;
+
+		article:not(:last-child) {
+			margin-bottom: 2.5em;
+		}
+
+		.entry-content p {
+			font-size: 1.1rem;
+		}
+	}
+
+	hr {
+		padding: 0 $size__content-padding;
+		max-width: 200px;
+		margin: 4.2em auto;
 	}
 }
