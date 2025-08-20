@@ -35,17 +35,35 @@
 	margin: 0 auto;
 	max-width: $max-size__boxed-content;
 	padding: 0 $size__content-padding;
+
+	@media (max-width: 1024px) {
+		& {
+			padding: 0 $size__content-padding-mobile;
+		}
+	}
 }
 
 .page {
 	.widget-area {
 		padding: 0 $size__content-padding;
+
+		@media (max-width: 1024px) {
+			& {
+				padding: 0 $size__content-padding-mobile;
+			}
+		}
 	}
 }
 
 .single-post {
 	.widget-area {
 		padding: 0 $size__content-padding;
+
+		@media (max-width: 1024px) {
+			& {
+				padding: 0 $size__content-padding-mobile;
+			}
+		}
 	}
 
 	.entry-content {

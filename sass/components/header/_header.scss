@@ -1,8 +1,14 @@
 .site-header {
-	padding: 1em $size__content-padding 1em;
+	padding: 32px $size__content-padding 1em;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+
+	@media (max-width: 1024px) {
+		& {
+			padding: 32px $size__content-padding-mobile 0;
+		}
+	}
 
 	h1 {
 		margin-top: 0;

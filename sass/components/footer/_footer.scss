@@ -1,5 +1,11 @@
 .site-footer {
 	padding: 2em $size__content-padding;
+
+	@media (max-width: 1024px) {
+		& {
+			padding: 2em $size__content-padding-mobile;
+		}
+	}
 }
 
 .entry-footer {
