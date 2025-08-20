@@ -177,8 +177,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 function vivi_of_the_void_post_class( $classes ) {
-	$classes[] = 'votv-boxed-content';
 	return $classes;
 }
 
-add_filter( 'post_class', 'vivi_of_the_void_post_class', 1, 10 );
+//add_filter( 'post_class', 'vivi_of_the_void_post_class', 1, 10 );

@@ -17,6 +17,15 @@
 	margin: 1.5em 0 0;
 }
 
+.entry-header {
+	position: relative;
+	z-index: 1;
+}
+
+.entry-header h1 {
+	font-size: 4em;
+}
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
@@ -37,5 +46,41 @@
 .single-post {
 	.widget-area {
 		padding: 0 $size__content-padding;
+	}
+
+	.entry-content {
+		margin-bottom: 2em;
+	}
+
+	.entry-header + .entry-content {
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
+}
+
+.votv-hero {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	min-height: 500px;
+	margin: 2em 0 4em;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 0 0 3em;
+
+	&::after {
+		content: " ";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+	}
+
+	.entry-header {
+		width: 100%;
 	}
 }
