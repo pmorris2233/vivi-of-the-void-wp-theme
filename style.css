@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
 Description: Description
-Version: 1.0.0
+Version: 1.1.0
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -419,7 +419,7 @@ h3 {
 }
 
 .site-title {
-	font-size: 1.8rem;
+	font-size: 2.5rem;
 }
 
 p {
@@ -655,12 +655,12 @@ textarea {
 	padding: 32px 80px 1em;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 @media (max-width: 1024px) {
 	.site-header {
-		padding: 32px 50px 0;
+		padding: 32px 40px 0;
 	}
 }
 
@@ -701,7 +701,7 @@ textarea {
 
 @media (max-width: 1024px) {
 	.site-footer {
-		padding: 2em 50px;
+		padding: 2em 40px;
 	}
 }
 
@@ -853,7 +853,7 @@ textarea {
 
 @media (max-width: 1024px) {
 	.votv-boxed-content {
-		padding: 0 50px;
+		padding: 0 40px;
 	}
 }
 
@@ -863,7 +863,7 @@ textarea {
 
 @media (max-width: 1024px) {
 	.page .widget-area {
-		padding: 0 50px;
+		padding: 0 40px;
 	}
 }
 
@@ -873,7 +873,7 @@ textarea {
 
 @media (max-width: 1024px) {
 	.single-post .widget-area {
-		padding: 0 50px;
+		padding: 0 40px;
 	}
 }
 
@@ -921,7 +921,7 @@ textarea {
 
 @media (max-width: 1024px) {
 	.blog .widget-area {
-		padding: 0 50px;
+		padding: 0 40px;
 	}
 }
 
@@ -933,7 +933,7 @@ textarea {
 
 @media (max-width: 1024px) {
 	.blog .blog-header {
-		padding: 0 50px;
+		padding: 0 40px;
 	}
 }
 
@@ -948,7 +948,7 @@ textarea {
 
 @media (max-width: 1024px) {
 	.blog .blog-about {
-		padding: 0 50px;
+		padding: 0 40px;
 	}
 }
 
@@ -984,7 +984,7 @@ textarea {
 }
 
 .blog .blog-posts article:not(:last-child) {
-	margin-bottom: 2.5em;
+	margin-bottom: 4em;
 }
 
 .blog .blog-posts .entry-title {
@@ -995,6 +995,37 @@ textarea {
 	font-size: 1.1rem;
 }
 
+.blog .blog-posts .votv-article-container {
+	display: flex;
+}
+
+.blog .blog-posts .votv-article-container .votv-post-thumbnail-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1 0 auto;
+}
+
+.blog .blog-posts .votv-article-container .votv-post-thumbnail {
+	width: 100%;
+	max-width: 300px;
+	height: 192px;
+	object-fit: cover;
+	margin-left: 3.5em;
+}
+
+@media screen and (max-width: 1080px) {
+	.blog .blog-posts .votv-article-container {
+		flex-direction: column-reverse;
+	}
+	.blog .blog-posts .votv-article-container .votv-post-thumbnail {
+		max-width: 100%;
+		height: 205px;
+		margin-left: 0;
+		margin-bottom: 2em;
+	}
+}
+
 .blog hr {
 	padding: 0 80px;
 	max-width: 200px;
@@ -1003,7 +1034,7 @@ textarea {
 
 @media (max-width: 1024px) {
 	.blog hr {
-		padding: 0 50px;
+		padding: 0 40px;
 	}
 }
 
