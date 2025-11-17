@@ -180,4 +180,15 @@ function vivi_of_the_void_post_class( $classes ) {
 	return $classes;
 }
 
-//add_filter( 'post_class', 'vivi_of_the_void_post_class', 1, 10 );
+add_action( 'admin_init', 'vivi_of_the_void_hide_editor' );
+
+function vivi_of_the_void_hide_editor() {
+	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+	if ( !isset( $post_id ) ) return;
+
+	$pagetitle = get_the_title( $post_id );
+
+	if ( $pagetitle == 'Home' ){
+		remove_post_type_support( 'page', 'editor' );
+	}
+}
