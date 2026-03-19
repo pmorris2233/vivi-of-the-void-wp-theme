@@ -27,7 +27,9 @@ $author_bio = get_field( 'bio', 37 );
 
 			<div class="blog-about__blurb">
 				<h2 class="blog-about__title">About</h2>
-				<?= wp_kses_post( $author_bio ) ?>
+				<div class="blog-about__blurb-content">
+					<?= wp_kses_post( $author_bio ) ?>
+				</div>
 			</div>
 		</div>
 		<?php endif; ?>
