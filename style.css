@@ -867,25 +867,25 @@ textarea {
 	}
 }
 
-.single-post .widget-area {
+.single-post .widget-area, .single-fiction .widget-area {
 	padding: 0 80px;
 }
 
 @media (max-width: 1024px) {
-	.single-post .widget-area {
+	.single-post .widget-area, .single-fiction .widget-area {
 		padding: 0 30px;
 	}
 }
 
-.single-post .entry-content {
+.single-post .entry-content, .single-fiction .entry-content {
 	margin-bottom: 2em;
 }
 
-.single-post .entry-content p {
+.single-post .entry-content p, .single-fiction .entry-content p {
 	font-size: 1.125rem;
 }
 
-.single-post .entry-header + .entry-content {
+.single-post .entry-header + .entry-content, .single-fiction .entry-header + .entry-content {
 	margin-top: 2em;
 	margin-bottom: 2em;
 }
