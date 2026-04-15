@@ -37,7 +37,9 @@ $author_bio = get_field( 'bio', 37 );
 		<hr>
 
 		<?php
-		if ( have_posts() ) :
+		$fiction_query = new WP_Query( [ 'post_type' => 'fiction' ] );
+
+		if ( $fiction_query->have_posts() ) :
 			?>
 
 			<div class="blog-posts">
@@ -52,30 +54,25 @@ $author_bio = get_field( 'bio', 37 );
 				<?php
 			endif;
 
-			$fiction_query = new WP_Query( [ 'post_type' => 'fiction' ] );
 
 			/* Start the Loop */
-			if ( $fiction_query->have_posts() ) :
-				while ( $fiction_query->have_posts() ) :
-					$fiction_query->the_post();
+			while ( $fiction_query->have_posts() ) :
+				$fiction_query->the_post();
 
-					/*
-					 * Include the Post-Type-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-					 */
-					if ( is_singular() ) :
-						get_template_part( 'template-parts/content', get_post_type() );
-					else :
-						get_template_part( 'template-parts/content', 'post-listing' );
-					endif;
+				/*
+				 * Include the Post-Type-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 */
+				if ( is_singular() ) :
+					get_template_part( 'template-parts/content', get_post_type() );
+				else :
+					get_template_part( 'template-parts/content', 'post-listing' );
+				endif;
 
-				endwhile;
+			endwhile;
 
-				wp_reset_postdata();
-			else :
-				?><h2 style="text-align: center;"><?= __( 'No fiction found', 'vivi-of-the-void' ) ?></h2><?php
-			endif;
+			wp_reset_postdata();
 
 			?>
 
