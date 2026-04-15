@@ -188,7 +188,40 @@ function vivi_of_the_void_hide_editor() {
 
 	$pagetitle = get_the_title( $post_id );
 
-	if ( $pagetitle == 'Home' ){
+	if ( $pagetitle == 'Home' ) {
 		remove_post_type_support( 'page', 'editor' );
 	}
 }
+
+function vivi_of_the_void_register_fiction_cpt() {
+	$args = [
+		'labels' => [
+			'name'          => __( 'Fiction', 'vivi-of-the-void' ),
+			'singular_name' => __( 'Fiction', 'vivi-of-the-void' ),
+			'add_new'       => __( 'Add New Fiction', 'vivi-of-the-void' ),
+			'add_new_item'  => __( 'Add New Fiction', 'vivi-of-the-void' ),
+			'edit_item'     => __( 'Edit Fiction', 'vivi-of-the-void' ),
+			'new_item'      => __( 'New Fiction', 'vivi-of-the-void' ),
+			'view_item'     => __( 'View Fiction', 'vivi-of-the-void' ),
+			'view_items'    => __( 'View All Fiction', 'vivi-of-the-void' ),
+			'all_items'     => __( 'All Fiction', 'vivi-of-the-void' ),
+		],
+		'supports' => [
+			'title',
+			'editor',
+			'thumbnail'
+		],
+		'show_in_rest'    => true,
+		'public'          => true,
+		'show_ui'         => true,
+		'has_archive'     => false,
+		'capability_type' => 'post',
+		'hierarchical'    => false,
+		'menu_icon'       => 'dashicons-book',
+		'menu_position'   => 5
+	];
+
+	register_post_type( 'fiction', $args );
+}
+
+add_action( 'init', 'vivi_of_the_void_register_fiction_cpt', 10, 1 );
