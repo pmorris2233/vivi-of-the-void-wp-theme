@@ -14,24 +14,31 @@
 
 get_header();
 
-$author_img = get_field( 'author_image', 37 );
-$author_bio = get_field( 'bio', 37 );
+$author_img = get_field( 'author_image', get_the_ID() );
+$author_bio = get_field( 'bio', get_the_ID() );
 ?>
 
 	<main id="primary" class="site-main">
+
 		<?php if ( $author_bio ) : ?>
+
 		<div class="blog-about">
 			<?php if ( $author_img ) : ?>
+
 			<img class="blog-about__image" src="<?= $author_img['url'] ?>" alt="Vivi of the Void">
+
 			<?php endif; ?>
 
 			<div class="blog-about__blurb">
 				<h2 class="blog-about__title">About</h2>
 				<div class="blog-about__blurb-content">
+
 					<?= wp_kses_post( $author_bio ) ?>
+
 				</div>
 			</div>
 		</div>
+
 		<?php endif; ?>
 		
 		<hr>
@@ -44,43 +51,34 @@ $author_bio = get_field( 'bio', 37 );
 
 			<div class="blog-posts">
 
-			<?php
-
-			if ( is_home() ) :
-				?>
 				<header class="blog-header">
 					<h2 class="page-title"><?= __( 'Fiction', 'vivi-of-the-void' ) ?></h2>
 				</header>
+
 				<?php
-			endif;
 
 
-			/* Start the Loop */
-			while ( $fiction_query->have_posts() ) :
-				$fiction_query->the_post();
+				/* Start the Loop */
+				while ( $fiction_query->have_posts() ) :
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				if ( is_singular() ) :
-					get_template_part( 'template-parts/content', get_post_type() );
-				else :
+					$fiction_query->the_post();
+
+					/*
+					 * Include the Post-Type-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+					 */
 					get_template_part( 'template-parts/content', 'post-listing' );
-				endif;
 
-			endwhile;
+				endwhile;
 
-			wp_reset_postdata();
-
-			?>
+				?>
 
 			</div>
 
 			<?php
 
-			the_posts_navigation();
+			wp_reset_postdata();
 
 		else :
 

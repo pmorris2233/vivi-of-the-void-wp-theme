@@ -61,7 +61,7 @@ $featured_img_url = get_the_post_thumbnail_url();
 		</div><!-- .entry-content -->
 	</div><!-- .votv-article-container -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer votv-boxed-content">
 		<?php vivi_of_the_void_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
