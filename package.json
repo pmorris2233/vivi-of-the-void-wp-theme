@@ -43,6 +43,6 @@
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
-    "bundle": "rm -rf ../vivi-of-the-void.zip && sass --no-source-map sass:. && rtlcss style.css style-rtl.css && dir-archiver write --src . --dest ../vivi-of-the-void.zip --profile compat --includebasedir --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+    "bundle": "rm -rf ../vivi-of-the-void.zip && sass --no-source-map sass:. && rtlcss style.css style-rtl.css && dir-archiver write --src . --dest ../vivi-of-the-void.zip --profile compat --includebasedir --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock bin"
   }
 }
