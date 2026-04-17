@@ -17,6 +17,10 @@
 		max-width: structure.$max-size__boxed-content;
 		margin: 0 auto;
 
+		.page-title {
+			text-align: center;
+		}
+
 		@media (max-width: 1024px) {
 			& {
 				padding: 0 structure.$size__content-padding-mobile;
