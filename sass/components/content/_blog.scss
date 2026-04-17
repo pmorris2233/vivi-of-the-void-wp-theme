@@ -1,30 +1,32 @@
+@use "../../abstracts/variables/structure";
+
 .blog {
 
 	.widget-area {
-		padding: 0 $size__content-padding;
+		padding: 0 structure.$size__content-padding;
 
 		@media (max-width: 1024px) {
 			& {
-				padding: 0 $size__content-padding-mobile;
+				padding: 0 structure.$size__content-padding-mobile;
 			}
 		}
 	}
 
 	.blog-header {
-		padding: 0 $size__content-padding;
-		max-width: $max-size__boxed-content;
+		padding: 0 structure.$size__content-padding;
+		max-width: structure.$max-size__boxed-content;
 		margin: 0 auto;
 
 		@media (max-width: 1024px) {
 			& {
-				padding: 0 $size__content-padding-mobile;
+				padding: 0 structure.$size__content-padding-mobile;
 			}
 		}
 	}
 
 	.blog-about {
-		padding: 0 $size__content-padding 2em;
-		max-width: $max-size__boxed-content;
+		padding: 0 structure.$size__content-padding 2em;
+		max-width: structure.$max-size__boxed-content;
 		margin: 4em auto 0;
 		display: flex;
 		flex-direction: row;
@@ -32,7 +34,7 @@
 
 		@media (max-width: 1024px) {
 			& {
-				padding: 0 $size__content-padding-mobile;
+				padding: 0 structure.$size__content-padding-mobile;
 			}
 		}
 
@@ -60,7 +62,7 @@
 		}
 
 		&__image {
-			max-width: calc( #{$max-size__boxed-content} / 3 );
+			max-width: calc( #{structure.$max-size__boxed-content} / 3 );
 			margin: 25px 60px 0 0;
 		}
 
@@ -126,13 +128,13 @@
 	}
 
 	hr {
-		padding: 0 $size__content-padding;
+		padding: 0 structure.$size__content-padding;
 		max-width: 200px;
 		margin: 4.2em auto;
 
 		@media (max-width: 1024px) {
 			& {
-				padding: 0 $size__content-padding-mobile;
+				padding: 0 structure.$size__content-padding-mobile;
 			}
 		}
 	}

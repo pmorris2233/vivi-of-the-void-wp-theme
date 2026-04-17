@@ -19,27 +19,30 @@
   "devDependencies": {
     "@wordpress/scripts": "^32.0.0",
     "dir-archiver": "^3.0.1",
+    "rtlcss": "^4.3.0",
     "sass": "1.99.0"
   },
   "rtlcssConfig": {
     "options": {
-      "autoRename": false,
-      "autoRenameStrict": false,
-      "blacklist": {},
-      "clean": true,
-      "greedy": false,
-      "processUrls": false,
-      "stringMap": []
+		"autoRename": false,
+        "autoRenameStrict": false,
+        "blacklist":{},
+        "clean": true,
+        "greedy": false,
+        "processUrls": false,
+        "stringMap":[],
+        "useCalc": false,
+        "aliases":{}
     },
     "plugins": [],
     "map": false
   },
   "scripts": {
-	"watch": "sass --style expanded --watch sass:.",
-	"compile:css": "sass sass:.",
+    "watch": "sass --style expanded --watch sass:.",
+    "compile:css": "sass sass:.",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
-    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+    "bundle": "rm -rf ../vivi-of-the-void.zip && sass --no-source-map --style compressed sass:. && rtlcss style.css style-rtl.css && dir-archiver --src . --dest ../vivi-of-the-void.zip --include-base-directory --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
   }
 }
