@@ -58,6 +58,10 @@
 }
 
 .single-post, .single-fiction {
+	article {
+		margin-top: 4em;
+	}
+
 	.widget-area {
 		padding: 0 structure.$size__content-padding;
 
@@ -87,7 +91,7 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	min-height: 500px;
-	margin: 2em 0 4em;
+	margin: -2em 0 4em;
 	position: relative;
 	display: flex;
 	flex-direction: column;

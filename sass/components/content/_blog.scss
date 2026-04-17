@@ -12,75 +12,8 @@
 		}
 	}
 
-	.blog-header {
-		padding: 0 structure.$size__content-padding;
-		max-width: structure.$max-size__boxed-content;
-		margin: 0 auto;
-
-		@media (max-width: 1024px) {
-			& {
-				padding: 0 structure.$size__content-padding-mobile;
-			}
-		}
-	}
-
-	.blog-about {
-		padding: 0 structure.$size__content-padding 2em;
-		max-width: structure.$max-size__boxed-content;
-		margin: 4em auto 0;
-		display: flex;
-		flex-direction: row;
-		align-items: flex-start;
-
-		@media (max-width: 1024px) {
-			& {
-				padding: 0 structure.$size__content-padding-mobile;
-			}
-		}
-
-		&__blurb {
-			font-size: 1.3rem;
-			line-height: 1.6;
-			letter-spacing: 0.025em;
-		}
-
-		&__blurb-content {
-			h1 {
-				font-size: 2.8125rem;
-				margin: 0 0 0.5em;
-			}
-
-			h2 {
-				font-size: 1.875rem;
-				margin: 0 0 0.5em;
-			}
-		}
-
-		&__title {
-			font-size: 2.8125rem;
-			margin: 0 0 0.5em;
-		}
-
-		&__image {
-			max-width: calc( #{structure.$max-size__boxed-content} / 3 );
-			margin: 25px 60px 0 0;
-		}
-
-		@media screen and (max-width: 1080px) {
-			& {
-				flex-direction: column;
-				align-items: center;
-			}
-
-			&__image {
-				margin: 0 0 2em;
-				width: 100%;
-			}
-		}
-	}
-
 	.blog-posts {
-		margin-bottom: 6em;
+		margin: 4em 0 6em;
 
 		article:not(:last-child) {
 			margin-bottom: 4em;
