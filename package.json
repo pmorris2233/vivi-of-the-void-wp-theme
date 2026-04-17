@@ -1,6 +1,6 @@
 {
   "name": "vivi-of-the-void",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "description": "WordPress theme for Vivi of the Void",
   "author": "Paul Morris",
   "license": "GPL-2.0-or-later",
@@ -43,6 +43,6 @@
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
-    "bundle": "rm -rf ../vivi-of-the-void.zip && sass --no-source-map --style compressed sass:. && rtlcss style.css style-rtl.css && dir-archiver --src . --dest ../vivi-of-the-void.zip --include-base-directory --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+    "bundle": "rm -rf ../vivi-of-the-void.zip && sass --no-source-map --style compressed sass:. && rtlcss style.css style-rtl.css && dir-archiver write --src . --dest ../vivi-of-the-void.zip --profile compat --includebasedir --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
   }
 }

@@ -19,45 +19,19 @@ $author_bio = get_field( 'bio', 37 );
 ?>
 
 	<main id="primary" class="site-main">
-		<?php if ( $author_bio ) : ?>
-		<div class="blog-about">
-			<?php if ( $author_img ) : ?>
-			<img class="blog-about__image" src="<?= $author_img['url'] ?>" alt="Vivi of the Void">
-			<?php endif; ?>
-
-			<div class="blog-about__blurb">
-				<h2 class="blog-about__title">About</h2>
-				<div class="blog-about__blurb-content">
-					<?= wp_kses_post( $author_bio ) ?>
-				</div>
-			</div>
-		</div>
-		<?php endif; ?>
-		
-		<hr>
 
 		<?php
-		$fiction_query = new WP_Query( [ 'post_type' => 'fiction' ] );
 
-		if ( $fiction_query->have_posts() ) :
+		if ( have_posts() ) :
 			?>
 
 			<div class="blog-posts">
 
 			<?php
 
-			if ( is_home() ) :
-				?>
-				<header class="blog-header">
-					<h2 class="page-title"><?= __( 'Fiction', 'vivi-of-the-void' ) ?></h2>
-				</header>
-				<?php
-			endif;
-
-
 			/* Start the Loop */
-			while ( $fiction_query->have_posts() ) :
-				$fiction_query->the_post();
+			while ( have_posts() ) :
+				the_post();
 
 				/*
 				 * Include the Post-Type-specific template for the content.
