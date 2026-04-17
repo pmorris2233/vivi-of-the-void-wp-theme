@@ -13,9 +13,6 @@
  */
 
 get_header();
-
-$author_img = get_field( 'author_image', 37 );
-$author_bio = get_field( 'bio', 37 );
 ?>
 
 	<main id="primary" class="site-main">
