@@ -68,7 +68,8 @@ if ( ! function_exists( 'vivi_of_the_void_entry_footer' ) ) :
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'vivi-of-the-void' ) );
-			if ( $tags_list ) {
+			// if ( $tags_list ) {
+			if ( false ) {
 				/* translators: 1: list of tags. */
 				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'vivi-of-the-void' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}

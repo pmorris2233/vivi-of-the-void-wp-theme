@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
 Description: Description
-Version: 1.1.4
+Version: 1.1.5
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -687,6 +687,9 @@ textarea {
 .site-footer {
   padding: 2em 80px;
 }
+.site-footer .site-info {
+  text-align: center;
+}
 @media (max-width: 1024px) {
   .site-footer {
     padding: 2em 30px;
@@ -809,7 +812,7 @@ textarea {
 }
 
 .entry-header h1 {
-  font-size: 4em;
+  font-size: 2.8125rem;
 }
 
 .page-links {
@@ -883,6 +886,9 @@ textarea {
 .votv-hero .entry-header {
   width: 100%;
 }
+.votv-hero .entry-header h1 {
+  font-size: 4rem;
+}
 
 /* Home
 --------------------------------------------- */
@@ -891,19 +897,6 @@ textarea {
 }
 @media (max-width: 1024px) {
   .home .widget-area {
-    padding: 0 30px;
-  }
-}
-.home .blog-header {
-  padding: 0 80px;
-  max-width: 1206px;
-  margin: 0 auto;
-}
-.home .blog-header .page-title {
-  text-align: center;
-}
-@media (max-width: 1024px) {
-  .home .blog-header {
     padding: 0 30px;
   }
 }
@@ -954,6 +947,19 @@ textarea {
 .home .blog-posts {
   margin-bottom: 6em;
 }
+.home .blog-posts .blog-header {
+  padding: 0 80px;
+  max-width: 1206px;
+  margin: 0 auto;
+}
+.home .blog-posts .blog-header .page-title {
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  .home .blog-posts .blog-header {
+    padding: 0 30px;
+  }
+}
 .home .blog-posts article:not(:last-child) {
   margin-bottom: 4em;
 }
@@ -962,6 +968,9 @@ textarea {
 }
 .home .blog-posts .entry-content p {
   font-size: 1.25rem;
+}
+.home .blog-posts .entry-footer:has(*) {
+  margin-top: 1em;
 }
 .home .blog-posts .votv-article-container {
   display: flex;
@@ -984,6 +993,61 @@ textarea {
     flex-direction: column-reverse;
   }
   .home .blog-posts .votv-article-container .votv-post-thumbnail {
+    max-width: 100%;
+    height: 205px;
+    margin-right: 0;
+    margin-bottom: 2em;
+  }
+}
+.home .fiction-posts {
+  margin-bottom: 6em;
+}
+.home .fiction-posts .fiction-header {
+  padding: 0 80px;
+  max-width: 1206px;
+  margin: 0 auto;
+}
+.home .fiction-posts .fiction-header .page-title {
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  .home .fiction-posts .fiction-header {
+    padding: 0 30px;
+  }
+}
+.home .fiction-posts article:not(:last-child) {
+  margin-bottom: 4em;
+}
+.home .fiction-posts .entry-title {
+  margin-bottom: 0.5em;
+}
+.home .fiction-posts .entry-content p {
+  font-size: 1.25rem;
+}
+.home .fiction-posts .entry-footer:has(*) {
+  margin-top: 1em;
+}
+.home .fiction-posts .votv-article-container {
+  display: flex;
+}
+.home .fiction-posts .votv-article-container .votv-post-thumbnail-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto;
+}
+.home .fiction-posts .votv-article-container .votv-post-thumbnail {
+  width: 100%;
+  max-width: 300px;
+  height: 192px;
+  object-fit: cover;
+  margin-right: 3.5em;
+}
+@media screen and (max-width: 1080px) {
+  .home .fiction-posts .votv-article-container {
+    flex-direction: column-reverse;
+  }
+  .home .fiction-posts .votv-article-container .votv-post-thumbnail {
     max-width: 100%;
     height: 205px;
     margin-right: 0;
