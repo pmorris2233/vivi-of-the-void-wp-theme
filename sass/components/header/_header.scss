@@ -1,21 +1,6 @@
 @use "../../abstracts/variables/structure";
 
-.site-header {
-	padding: 32px structure.$size__content-padding 1em;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-
-	@media (max-width: 1024px) {
-		& {
-			padding: 32px structure.$size__content-padding-mobile 0;
-		}
-	}
-
-	h1 {
-		margin-top: 0;
-	}
-
+.site-background {
 	&::before {
 		content: "";
 		position: absolute;
@@ -39,5 +24,22 @@
 		width: 100%;
 		min-height: 43vw;
 		background: linear-gradient(180deg,rgba(155, 42, 42, 0) 0%, rgba(0, 0, 0, 1) 100%);
+	}
+}
+
+.site-header {
+	padding: 32px structure.$size__content-padding 1em;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	@media (max-width: 1024px) {
+		& {
+			padding: 32px structure.$size__content-padding-mobile 0;
+		}
+	}
+
+	h1 {
+		margin-top: 0;
 	}
 }

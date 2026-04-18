@@ -29,6 +29,7 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'vivi-of-the-void' ); ?></a>
+	<div class="site-background"></div>
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
