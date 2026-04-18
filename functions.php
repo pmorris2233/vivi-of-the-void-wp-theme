@@ -9,7 +9,7 @@
 
 if ( ! defined( 'VOTV_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'VOTV_VERSION', '1.1.4' );
+	define( 'VOTV_VERSION', '1.1.5' );
 }
 
 /**
