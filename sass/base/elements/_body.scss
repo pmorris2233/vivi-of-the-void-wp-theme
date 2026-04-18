@@ -1,5 +1,9 @@
 @use "../../abstracts/variables/colors";
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background: colors.$color__background-body; // Fallback for when there is no custom background color defined.
 }

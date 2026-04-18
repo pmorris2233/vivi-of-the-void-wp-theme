@@ -41,7 +41,7 @@ $author_bio = get_field( 'bio', get_the_ID() );
 
 		<?php endif; ?>
 		
-		<hr>
+		<hr id="blog">
 
 		<?php
 		$blog_posts = new WP_Query( [ 'post_type' => 'post' ] );
@@ -81,7 +81,7 @@ $author_bio = get_field( 'bio', get_the_ID() );
 		endif;
 		?>
 
-		<hr>
+		<hr id="fiction">
 
 		<?php
 		$fiction_query = new WP_Query( [ 'post_type' => 'fiction' ] );
