@@ -3,6 +3,10 @@
 .site-footer {
 	padding: 2em structure.$size__content-padding;
 
+	.site-info {
+		text-align: center;
+	}
+
 	@media (max-width: 1024px) {
 		& {
 			padding: 2em structure.$size__content-padding-mobile;

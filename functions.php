@@ -140,8 +140,13 @@ add_action( 'widgets_init', 'vivi_of_the_void_widgets_init' );
 function vivi_of_the_void_scripts() {
 	wp_enqueue_style( 'vivi-of-the-void-style', get_stylesheet_uri(), array(), VOTV_VERSION );
 	wp_style_add_data( 'vivi-of-the-void-style', 'rtl', 'replace' );
-
-	wp_enqueue_script( 'vivi-of-the-void-navigation', get_template_directory_uri() . '/js/navigation.js', array(), VOTV_VERSION, true );
+	wp_enqueue_script(
+		'vivi-of-the-void-navigation',
+		get_template_directory_uri() . '/js/navigation.js',
+		array(),
+		VOTV_VERSION,
+		true
+	);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -180,18 +185,18 @@ function vivi_of_the_void_post_class( $classes ) {
 	return $classes;
 }
 
-add_action( 'admin_init', 'vivi_of_the_void_hide_editor' );
-
 function vivi_of_the_void_hide_editor() {
-	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
-	if ( !isset( $post_id ) ) return;
+	$front_page_id = get_option( 'page_on_front' );
+	$post_id       = isset( $_GET['post'] ) ? $_GET['post'] : $_POST['post_ID'] ?? null;
 
-	$pagetitle = get_the_title( $post_id );
+	if ( ! isset( $post_id ) ) return;
 
-	if ( $pagetitle == 'Home' ) {
+	if ( $front_page_id === $post_id ) {
 		remove_post_type_support( 'page', 'editor' );
 	}
 }
+
+add_action( 'admin_init', 'vivi_of_the_void_hide_editor' );
 
 function vivi_of_the_void_register_fiction_cpt() {
 	$args = [
