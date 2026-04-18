@@ -40,7 +40,13 @@
 
 	@media (max-width: 1024px) {
 		& {
-			padding: 32px structure.$size__content-padding-mobile 0;
+			padding: 25px structure.$size__content-padding-mobile;
+		}
+	}
+
+	@media (max-width: 599px) {
+		& {
+			background-color: #000;
 		}
 	}
 
@@ -66,28 +72,11 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-	}
 
-	.main-navigation {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-
-		a {
-			text-decoration: underline rgba(255, 255, 255, 0);
-			transition: text-decoration-color 400ms;
-
-			&:hover,
-			&:active,
-			&:focus {
-				text-decoration-color: rgba(255, 255, 255, 1);
+		@media (max-width: 599px) {
+			& {
+				align-items: center;
 			}
-		}
-
-		.nav-menu {
-			display: flex;
-			justify-content: flex-end;
-			gap: 30px;
 		}
 	}
 }

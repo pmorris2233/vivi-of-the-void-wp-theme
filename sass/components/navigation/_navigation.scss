@@ -1,9 +1,56 @@
+@use "../../abstracts/variables/structure";
+
 .main-navigation {
-	display: block;
+	display: flex;
 	width: auto;
+	justify-content: flex-end;
+
+	@media (max-width: 599px) {
+		& {
+			flex-direction: column;
+		}
+	}
+
+	a {
+		text-decoration: underline rgba(255, 255, 255, 0);
+		transition: text-decoration-color 400ms;
+
+		&:hover,
+		&:active,
+		&:focus {
+			text-decoration-color: rgba(255, 255, 255, 1);
+		}
+	}
+
+	.nav-menu {
+		justify-content: flex-end;
+		gap: 30px;
+
+		@media (max-width: 599px) {
+			& {
+				position: absolute;
+				top: 98px;
+				left: 0;
+				width: 100%;
+				padding: 0 structure.$size__content-padding-mobile 20px;
+				background-color: #000;
+			}
+
+			li {
+				text-align: center;
+			}
+
+			li:not(:last-child) {
+				margin-bottom: 0.5em;
+			}
+		}
+	}
 
 	.page_item {
 		font-size: 1.625rem;
+	}
+
+	.menu-wrap {
 	}
 
 	ul {
