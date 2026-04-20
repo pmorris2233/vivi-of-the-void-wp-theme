@@ -214,4 +214,16 @@
 			}
 		}
 	}
+
+	.scroll-anchor {
+		position: relative;
+		display: block;
+		height: 0;
+		visibility: hidden;
+		top: -125px;
+
+		@media (max-width: 599px) {
+			top: -230px;
+		}
+	}
 }

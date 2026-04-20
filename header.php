@@ -53,7 +53,13 @@
 			</div><!-- .site-branding -->
 			
 			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'vivi-of-the-void' ); ?></button>
+				<div class="menu-toggle-wrap">
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
 				<div class="menu-wrap">
 					<?php
 					wp_nav_menu(

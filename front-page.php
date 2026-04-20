@@ -41,12 +41,14 @@ $author_bio = get_field( 'bio', get_the_ID() );
 
 		<?php endif; ?>
 		
-		<hr id="blog">
+		<hr>
 
 		<?php
 		$blog_posts = new WP_Query( [ 'post_type' => 'post' ] );
 		if ( $blog_posts->have_posts() ) :
 			?>
+
+			<div id="blog" class="scroll-anchor"></div>
 
 			<div class="blog-posts">
 				<header class="blog-header">
@@ -81,13 +83,15 @@ $author_bio = get_field( 'bio', get_the_ID() );
 		endif;
 		?>
 
-		<hr id="fiction">
+		<hr>
 
 		<?php
 		$fiction_query = new WP_Query( [ 'post_type' => 'fiction' ] );
 
 		if ( $fiction_query->have_posts() ) :
 			?>
+
+			<div id="fiction" class="scroll-anchor"></div>
 
 			<div class="fiction-posts">
 
