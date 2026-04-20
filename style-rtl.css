@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
 Description: Description
-Version: 1.1.5
+Version: 1.2.0
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -481,6 +481,10 @@ big {
 
 /* Elements
 --------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #000;
 }
@@ -669,18 +673,52 @@ textarea {
 }
 
 .site-header {
-  padding: 32px 80px 1em;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 1.2em 80px 1.2em;
+  font-size: 2rem;
+  font-family: "Baskervville", serif;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 60%);
 }
 @media (max-width: 1024px) {
   .site-header {
-    padding: 32px 30px 0;
+    padding: 25px 30px;
   }
 }
-.site-header h1 {
-  margin-top: 0;
+@media (max-width: 599px) {
+  .site-header {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+}
+.site-header .site-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.site-header .site-title a {
+  text-decoration: underline rgba(255, 255, 255, 0);
+  transition: text-decoration-color 400ms;
+}
+.site-header .site-title a:hover, .site-header .site-title a:active, .site-header .site-title a:focus {
+  text-decoration-color: rgb(255, 255, 255);
+}
+.site-header .site-header-inner {
+  margin: 0 auto;
+  max-width: 1600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media (max-width: 599px) {
+  .site-header .site-header-inner {
+    align-items: center;
+  }
+}
+
+.admin-bar .site-header {
+  top: 32px;
 }
 
 /* Footer
@@ -707,11 +745,56 @@ textarea {
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
-  display: block;
+  display: flex;
   width: auto;
+  justify-content: flex-end;
+}
+@media (max-width: 599px) {
+  .main-navigation {
+    flex-direction: column;
+  }
+}
+.main-navigation a {
+  text-decoration: underline rgba(255, 255, 255, 0);
+  transition: text-decoration-color 400ms;
+}
+.main-navigation a:hover, .main-navigation a:active, .main-navigation a:focus {
+  text-decoration-color: rgb(255, 255, 255);
+}
+.main-navigation .nav-menu {
+  justify-content: flex-end;
+  gap: 30px;
+}
+.main-navigation .nav-menu a {
+  text-decoration: underline rgba(255, 255, 255, 0);
+  transition: text-decoration-color 400ms;
+}
+.main-navigation .nav-menu a:hover, .main-navigation .nav-menu a:active, .main-navigation .nav-menu a:focus {
+  text-decoration-color: rgb(255, 255, 255);
+}
+@media (max-width: 599px) {
+  .main-navigation .nav-menu {
+    position: absolute;
+    top: 98px;
+    right: 0;
+    width: 100%;
+    padding: 0 30px 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  .main-navigation .nav-menu li {
+    text-align: center;
+  }
+  .main-navigation .nav-menu li:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
 }
 .main-navigation .page_item {
   font-size: 1.625rem;
+}
+@starting-style {
+  .main-navigation ul {
+    opacity: 0;
+  }
 }
 .main-navigation ul {
   display: none;
@@ -754,6 +837,84 @@ textarea {
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
+  opacity: 1;
+}
+
+.menu-toggle-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-toggle {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0;
+  position: relative;
+  width: 40px;
+  height: 35px;
+  background: none;
+  border: none;
+  appearance: none;
+  cursor: pointer;
+}
+.menu-toggle span {
+  display: inline-block;
+  box-sizing: border-box;
+}
+.menu-toggle:focus:not(:focus-visible) {
+  outline: none;
+}
+.menu-toggle::before, .menu-toggle::after {
+  content: "";
+}
+.menu-toggle::before, .menu-toggle::after,
+.menu-toggle span {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: #fff;
+  border-radius: 4px;
+  transform-origin: 50% 50%;
+  transition: 0.2s;
+}
+.menu-toggle::before {
+  top: 15px;
+  right: 0;
+  transform: rotate(-45deg) scaleX(0);
+}
+.menu-toggle::after {
+  top: 15px;
+  left: 0;
+  transform: rotate(45deg) scaleX(0);
+}
+.menu-toggle span:nth-of-type(1) {
+  top: 0;
+  right: 0;
+  transition-delay: 0.2s;
+}
+.menu-toggle span:nth-of-type(2) {
+  top: 15.5px;
+  right: 0;
+  transition-delay: 0.2s;
+}
+.menu-toggle span:nth-of-type(3) {
+  bottom: 0;
+  right: 0;
+  transition-delay: 0.2s;
+}
+
+.toggled .menu-toggle::before {
+  transform: rotate(-45deg) scaleX(1);
+  transition-delay: 0.2s;
+}
+.toggled .menu-toggle::after {
+  transform: rotate(45deg) scaleX(1);
+  transition-delay: 0.2s;
+}
+.toggled .menu-toggle span {
+  transform: scaleX(0);
+  transition-delay: 0s;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -823,7 +984,7 @@ textarea {
 
 .votv-boxed-content {
   margin: 0 auto;
-  max-width: 1206px;
+  max-width: 1246px;
   padding: 0 80px;
 }
 @media (max-width: 1024px) {
@@ -842,7 +1003,10 @@ textarea {
 }
 
 .single-post article, .single-fiction article {
-  margin-top: 4em;
+  margin-top: 10em;
+}
+.single-post:not(:has(.votv-hero)), .single-fiction:not(:has(.votv-hero)) {
+  margin-top: 13em;
 }
 .single-post .widget-area, .single-fiction .widget-area {
   padding: 0 80px;
@@ -903,8 +1067,8 @@ textarea {
 }
 .home .blog-about {
   padding: 0 80px 2em;
-  max-width: 1206px;
-  margin: 4em auto 0;
+  max-width: 1246px;
+  margin: 13em auto 0;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -932,7 +1096,7 @@ textarea {
   margin: 0 0 0.5em;
 }
 .home .blog-about__image {
-  max-width: calc(1206px / 3);
+  max-width: calc(1246px / 3);
   margin: 25px 0 0 60px;
 }
 @media screen and (max-width: 1080px) {
@@ -950,7 +1114,7 @@ textarea {
 }
 .home .blog-posts .blog-header {
   padding: 0 80px;
-  max-width: 1206px;
+  max-width: 1246px;
   margin: 0 auto;
 }
 .home .blog-posts .blog-header .page-title {
@@ -1005,7 +1169,7 @@ textarea {
 }
 .home .fiction-posts .fiction-header {
   padding: 0 80px;
-  max-width: 1206px;
+  max-width: 1246px;
   margin: 0 auto;
 }
 .home .fiction-posts .fiction-header .page-title {
@@ -1058,11 +1222,23 @@ textarea {
 .home hr {
   padding: 0 80px;
   max-width: 200px;
-  margin: 4.2em auto;
+  margin: 5em auto;
 }
 @media (max-width: 1024px) {
   .home hr {
     padding: 0 30px;
+  }
+}
+.home .scroll-anchor {
+  position: relative;
+  display: block;
+  height: 0;
+  visibility: hidden;
+  top: -125px;
+}
+@media (max-width: 599px) {
+  .home .scroll-anchor {
+    top: -230px;
   }
 }
 
