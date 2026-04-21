@@ -1,5 +1,10 @@
 package-lock.json
 node_modules
 assets
+
+# Script symlinks
 deploy
 pulldb
+
+# Config
+.env
