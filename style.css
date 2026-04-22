@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
 Description: Description
-Version: 1.2.2
+Version: 1.2.3
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -1060,6 +1060,16 @@ textarea {
   }
 }
 
+.votv-page article {
+  margin-top: 12em;
+}
+.votv-page .entry-content {
+  margin-top: 2em;
+}
+.votv-page .entry-footer {
+  margin-top: 2em;
+}
+
 /* Home
 --------------------------------------------- */
 .home .widget-area {
@@ -1144,6 +1154,9 @@ textarea {
 }
 .home .blog-posts .votv-article-container {
   display: flex;
+}
+.home .blog-posts .votv-article-container__text {
+  max-width: calc(100% - 300px - 3.5em);
 }
 .home .blog-posts .votv-article-container .votv-post-thumbnail-link {
   display: flex;
@@ -1495,3 +1508,5 @@ textarea {
   margin-right: auto;
   margin-bottom: 1.5em;
 }
+
+/*# sourceMappingURL=style.css.map */

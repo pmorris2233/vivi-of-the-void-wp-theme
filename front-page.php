@@ -45,6 +45,7 @@ $author_bio = get_field( 'bio', get_the_ID() );
 
 		<?php
 		$blog_posts = new WP_Query( [ 'post_type' => 'post' ] );
+
 		if ( $blog_posts->have_posts() ) :
 			?>
 
