@@ -105,8 +105,10 @@
 		.votv-article-container {
 			display: flex;
 
-			&__text {
-				max-width: calc( 100% - 300px - 3.5em );
+			@media (min-width: 1080px) {
+				&__text {
+					max-width: calc( 100% - 300px - 3.5em );
+				}
 			}
 
 			.votv-post-thumbnail-link {
