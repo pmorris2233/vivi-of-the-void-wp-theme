@@ -1276,7 +1276,7 @@ textarea {
   }
 }
 .blog .blog-posts {
-  margin: 4em 0 6em;
+  margin: 14em 0 6em;
 }
 .blog .blog-posts article:not(:last-child) {
   margin-bottom: 4em;
