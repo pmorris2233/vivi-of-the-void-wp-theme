@@ -8,6 +8,7 @@
     "WordPress",
     "Theme"
   ],
+  "type": "module",
   "homepage": "https://github.com/Automattic/_s#readme",
   "repository": {
     "type": "git",
@@ -17,32 +18,40 @@
     "url": "https://github.com/Automattic/_s/issues"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^32.0.0",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "@babel/preset-react": "^7.28.5",
+    "babel-loader": "^10.1.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^7.1.4",
     "dir-archiver": "^3.0.1",
+    "mini-css-extract-plugin": "^2.10.2",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
     "rtlcss": "^4.3.0",
-    "sass": "1.99.0"
+    "sass": "1.99.0",
+    "sass-loader": "^16.0.7",
+    "webpack": "^5.106.2",
+    "webpack-cli": "^7.0.2"
   },
   "rtlcssConfig": {
     "options": {
-		"autoRename": false,
-        "autoRenameStrict": false,
-        "blacklist":{},
-        "clean": true,
-        "greedy": false,
-        "processUrls": false,
-        "stringMap":[],
-        "useCalc": false,
-        "aliases":{}
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": true,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": [],
+      "useCalc": false,
+      "aliases": {}
     },
     "plugins": [],
     "map": false
   },
   "scripts": {
-    "watch": "sass --style expanded --watch sass:.",
-    "compile:css": "sass sass:.",
-    "compile:rtl": "rtlcss style.css style-rtl.css",
-    "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
-    "lint:js": "wp-scripts lint-js 'js/*.js'",
+    "watch": "webpack --watch --mode development",
+    "build": "webpack --mode production",
     "bundle": "rm -rf ../vivi-of-the-void.zip && sass --no-source-map sass:. && rtlcss style.css style-rtl.css && dir-archiver write --src . --dest ../vivi-of-the-void.zip --profile compat --includebasedir --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock bin .env"
   }
 }
