@@ -1,6 +1,7 @@
 package-lock.json
 node_modules
-assets
+dist
+dist/*
 
 # Script symlinks
 deploy

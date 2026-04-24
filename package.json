@@ -28,7 +28,6 @@
     "mini-css-extract-plugin": "^2.10.2",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "rtlcss": "^4.3.0",
     "sass": "1.99.0",
     "sass-loader": "^16.0.7",
     "webpack": "^5.106.2",
@@ -52,6 +51,6 @@
   "scripts": {
     "watch": "webpack --watch --mode development",
     "build": "webpack --mode production",
-    "bundle": "rm -rf ../vivi-of-the-void.zip && sass --no-source-map sass:. && rtlcss style.css style-rtl.css && dir-archiver write --src . --dest ../vivi-of-the-void.zip --profile compat --includebasedir --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock bin .env"
+    "bundle": "rm -rf ../vivi-of-the-void.zip && npm run build && dir-archiver write --src . --dest ../vivi-of-the-void.zip --profile compat --includebasedir --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist src yarn.lock bin .env webpack.config.js"
   }
 }
