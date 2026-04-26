@@ -27,8 +27,20 @@
 	}
 }
 
+#stickyNav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+@keyframes slideDown {
+	from {transform: translateY(-100%)} 
+	to {transform: translateY(0%)} 
+}
+
 .site-header {
-	position: fixed;
+	position: relative;
 	top: 0;
 	left: 0;
 	z-index: 2;
@@ -37,6 +49,7 @@
 	font-size: 2rem;
 	font-family: "Baskervville", serif;
 	background: linear-gradient(0deg,rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 60%);
+	transition: padding 0.3s ease;
 
 	@media (max-width: 1024px) {
 		& {
@@ -48,6 +61,15 @@
 		& {
 			background-color: rgba(0, 0, 0, 0.9);
 		}
+	}
+
+	&--sticky {
+		position: fixed;
+		top: 0;
+		background-color: #1a1819;
+		padding-top: 0.25em;
+		padding-bottom: 0.25em;
+		animation: slideDown 0.37s;
 	}
 
 	.site-title {
