@@ -53,7 +53,7 @@ $author_bio = get_field( 'bio', get_the_ID() );
 
 			<div class="blog-posts">
 				<header class="blog-header">
-					<h2 class="page-title"><?= __( 'Blog', 'vivi-of-the-void' ) ?></h2>
+					<h2 class="page-title"><?= __( 'Articles &amp; Reviews', 'vivi-of-the-void' ) ?></h2>
 				</header>
 
 				<div class="blog-posts-inner">
